@@ -32,9 +32,9 @@ jobs:
       - name: Download Nasdanika CLI
         run: wget https://github.com/Nasdanika/cli/releases/download/maven-2024.7.1/nsd-cli-2024.7.1.zip
       - name: Unzip Nasdanika CLI
-        run unzip nsd-cli-2024.7.1.zip
+        run: unzip nsd-cli-2024.7.1.zip
       - name: Download Nasdanika CLI
-        run ls
+        run: ls
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
