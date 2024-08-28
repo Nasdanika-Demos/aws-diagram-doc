@@ -30,9 +30,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Download Nasdanika CLI
-        run: wget https://downloads.vlasov.us/nsd-cli-2024.8.0.zip
+        run: wget https://docs.nasdanika.org/cli/nsd-cli.zip
       - name: Unzip Nasdanika CLI
-        run: unzip nsd-cli-2024.8.0.zip
+        run: unzip nsd-cli.zip
       - name: Setup upterm session
         uses: lhotari/action-upterm@v1
         if: ${{ failure() }}
@@ -40,7 +40,7 @@ jobs:
           ## If no one connects after 5 minutes, shut down server.
           wait-timeout-minutes: 5
       - name: Generate site
-        working-directory: nsd-cli-2024.8.0
+        working-directory: nsd-cli
         run: |
           ls -l
           chmod u+x nsd
