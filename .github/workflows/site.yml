@@ -30,11 +30,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Download Nasdanika CLI
-        run: wget https://github.com/Nasdanika/cli/releases/download/maven-2024.7.1/nsd-cli-2024.7.1.zip
+        run: wget https://downloads.vlasov.us/nsd-cli-2024.8.0.zip
       - name: Unzip Nasdanika CLI
-        run: unzip nsd-cli-2024.7.1.zip
-      - name: Download Nasdanika CLI
-        run: ls
+        run: unzip nsd-cli-2024.8.0.zip
+      - name: Generate site
+        working-directory: nsd-cli-2024.8.0
+        run: |
+          ls
+          nsd -h
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
