@@ -36,8 +36,9 @@ jobs:
       - name: Generate site
         working-directory: nsd-cli-2024.8.0
         run: |
-          ls
-          nsd -h
+          ls -l
+          chmod u+x nsd
+          ./nsd -h
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
