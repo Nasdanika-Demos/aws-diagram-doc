@@ -42,9 +42,8 @@ jobs:
       - name: Generate site
         working-directory: nsd-cli
         run: |
-          ls -l
           chmod u+x nsd
-          ./nsd -h
+          ./nsd drawio ../aws.drawio html-app -r ../root-action.yml --add-to-root site../page-template.yml ../docs
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
