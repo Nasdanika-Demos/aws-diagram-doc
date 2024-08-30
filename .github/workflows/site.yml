@@ -32,13 +32,7 @@ jobs:
       - name: Download Nasdanika CLI
         run: wget https://downloads.vlasov.us/nsd-cli-2024.8.0.zip # https://docs.nasdanika.org/cli/nsd-cli.zip
       - name: Unzip Nasdanika CLI
-        run: unzip nsd-cli.zip
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-        if: ${{ failure() }}
-        with:
-          ## If no one connects after 5 minutes, shut down server.
-          wait-timeout-minutes: 5
+        run: unzip nsd-cli-2024.8.0.zip
       - name: Generate site
         working-directory: nsd-cli
         run: |
